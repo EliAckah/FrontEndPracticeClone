@@ -1,0 +1,137 @@
+.navbar {
+    background-color: white;
+    border-bottom:2px solid #333;
+    padding: 8px 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+    z-index: 500;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.navbar .left-section {
+    flex-shrink: 0;
+}
+
+.navbar .left-section a {
+    font-family: Modak, sans-serif;
+    color: #434343;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.navbar a:focus {
+    outline: 2px dashed #0707c0;
+    outline-offset: 2px;
+}
+
+
+.navbar .right-section ul {
+    display: flex;
+    column-gap: 20px;
+    justify-content: space-between;
+
+    font-weight: bold;
+}
+
+.navbar .right-section ul a {
+    display: block;
+    color: #434343;
+}
+
+/* Hamburger Button */
+.hamburger-button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 500;
+}
+
+.hamburger-button:focus {
+    outline: 2px dashed #0707c0;
+    outline-offset: 2px;
+}
+
+.hamburger-button .hamburger-line {
+    width: 30px;
+    height: 3px;
+    background: #333;
+    margin: 6px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Transform into an "X" when active */
+.hamburger-button.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(2px, 2px);
+}
+
+.hamburger-button.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-button.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(11px, -10px);
+}
+
+.navbar .right-section-mobile {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    z-index: 400;
+    background-color: white;
+    border-left: 2px solid black;
+    transition: right 0.3s ease-in-out;
+}
+
+.navbar .right-section-mobile.active {
+    right: 0;
+}
+
+.navbar .right-section-mobile ul {
+    margin-top: 40px;
+    padding-right: 10px;
+    margin-left: 40px;
+}
+
+.navbar .right-section-mobile ul li {
+    margin: 10px 0;
+}
+
+.navbar .right-section-mobile ul li a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@media (max-width:900px) {
+    .navbar .right-section {
+        display: none;
+    }
+
+    .navbar .left-section {
+        display: block;
+    }
+    
+    
+    .hamburger-button {
+        display: block;
+    }
+
+    .navbar .right-section-mobile {
+        display: block;
+    }
+}
